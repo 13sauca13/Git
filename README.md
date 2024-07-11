@@ -81,4 +81,18 @@ Podemos ver que tengo dos archivos untracked, para que se incluya en el próximo
 
 Si modificamos un archivo aun después de hacer el ```git add``` tendremos que volver a hacerlo para incluir estos cambios al commit tal y como nos avisa el sistema al hacer el ```git status```
 
+![image](https://github.com/user-attachments/assets/346622d1-d43d-437c-a2c9-d1f4b658c94c)
+
+Ahora que el área de staging está como queremos podemos confirmar los cambios:
+```git
+git commit
+```
+Automáticamente se abrirá el editor que configuramos con el ```git config```, en nuestro caso el Visual Studio Code, y nos pedirá el mensaje de la confirmación de cambios (una explicación sobre lo que hicimos o cambiamos), en cuanto guardemos el archivo podemos cerrarlo y el commit estará hecho
+
+![image](https://github.com/user-attachments/assets/b45b75c9-5b02-4ed5-9a47-e19144671087)
+
+Un atajo sería usar el siguiente comando para saltarnos el paso del editor y hacer el commit co el comentario en la propia línea de comando:
+```git
+git commit -m "Aqui entre comillas va el comentario"
+```
 
