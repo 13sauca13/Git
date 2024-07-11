@@ -95,4 +95,15 @@ Un atajo sería usar el siguiente comando para saltarnos el paso del editor y ha
 ```git
 git commit -m "Aqui entre comillas va el comentario"
 ```
-
+### Eliminar archivos
+Para eliminar un archivo basta con ejecutar el comando:
+```git
+git rm <nombre_archivo>
+```
+En el próximo commit el archivo será eliminado del repositorio local y de la rama
+### Renombrar archivos
+Para renombrar un archivo se usa el comando:
+```git
+git mv <nombre_original> <nombre_nuevo>
+```
+Este comando también será efectivo en el próximo commit
