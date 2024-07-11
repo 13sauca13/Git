@@ -48,8 +48,37 @@ Podemos comprobar el estado de los archivos con  el comando ```git status```
 Más adelante veremos en detalle acerca de los estados de archivos y su relación con los estados del repositorio.
 
 ### Ramificaciones
-Git es un sistema que sirve para el control de versiones. Cuando hablamos de ramificaciones, significa que tú has tomado la rama principal de desarrollo (***master***) y a partir de ahí has continuado trabajando sin seguir la rama principal de desarrollo.
+Git es un sistema que sirve para el control de versiones. Cuando hablamos de ramificaciones, significa que tomamos la rama principal de desarrollo (***master***) y a partir de ahí continuamos trabajando sin seguir esta rama principal de desarrollo.
 
-En cada confirmación de cambios (***commit***), Git almacena una instantánea del trabajo preparado. Dicha instantánea contiene además unos metadatos con el autor y el mensaje explicativo, y uno o varios apuntadores a las confirmaciones que sean padres directos de esta (un padre en los casos de confirmación normal, y múltiples padres en los casos de estar confirmando una fusión (***merge***) de dos o más ramas).
+En cada confirmación de cambios (***commit***), Git almacena una instantánea, esta instantánea contiene además unos metadatos con el autor, un mensaje, y uno o varios apuntadores a las confirmaciones que sean padres directos de esta (un padre en los casos de confirmación normal, y múltiples padres en los casos de estar confirmando una fusión (***merge***) de dos o más ramas).
 
-Una rama Git es simplemente un apuntador móvil apuntando a una de esas confirmaciones. La rama por defecto de Git es la rama master. Con la primera confirmación de cambios que realicemos, se creará esta rama principal master apuntando a dicha confirmación. En cada confirmación de cambios que realicemos, la rama irá avanzando automáticamente.
+Una rama Git es simplemente un apuntador móvil apuntando a una de esas confirmaciones. La rama por defecto de Git es la rama ***master***. Con la primera confirmación de cambios que hacemos, se creará esta rama principal master apuntando a dicha confirmación. En cada confirmación de cambios que realicemos, la rama irá avanzando.
+
+Podemos crear nuevas ramas desde el punto en el que estamos con el comando:
+```git
+git branch <nombre_rama>
+```
+Esto creará una rama que apunta donde está ahora mismo la rama en la que estábamos. Sólo creamos la rama, ahora tenemos que ponernos en ella para que nuestros commit sean ahí y no el rama actual, esto es mediante el apuntador ***HEAD***, que indica la rama local en la que estamos en cada momento. Para mover este HEAD de rama se utiliza el ```checkout```:
+```git
+git checkout <nombre_rama>
+```
+Así movemos el HEAD a la rama que indiquemos.
+
+Podemos ver las ramas y donde tenemos el HEAD con el comando ```git log --oneline -decorate```
+
+![image](https://github.com/user-attachments/assets/87fc834b-bbed-414a-be7b-1a8ab9db3d54)
+
+Cuando movemos el HEAD todos los archivos del repositorio local cambian a como están (o estaban) el la instantánea de la rama a la que acabamos de ir.
+
+## Usando Git
+Hay que tener claro el estado de los archivos para entender esta parte, cuando queramos "guardar nuestro trabajo", lo que vamos a hacer es una confirmación de cambios, un ***commit***, pero para esto los archivos tienen que estar en el área de preparación, en ***staging***, ya sean tracked modificados o untracked. Ejecutando el comando ```git status``` vemos como está el repositorio y sus archivos.
+
+![image](https://github.com/user-attachments/assets/b15b7ee5-a885-4ddf-bf77-b32e53deffec)
+
+Podemos ver que tengo dos archivos untracked, para que se incluya en el próximo commit tenemos que "rastrearlo", pasarlo a tracked, de lo contrario aunque hagamos un commit no se incluirán (para evitar incluir archivos por error). Para hacer esto se usa el comando ```git add```
+
+![image](https://github.com/user-attachments/assets/2d617485-cc31-451d-9f92-d2ecdc65d711)
+
+Si modificamos un archivo aun después de hacer el ```git add``` tendremos que volver a hacerlo para incluir estos cambios al commit tal y como nos avisa el sistema al hacer el ```git status```
+
+
