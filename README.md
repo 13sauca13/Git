@@ -16,10 +16,18 @@ Para utilizar Git hay que tenerlo instalado en sistema. Lo rpimero es acceder al
 Una vez descargado lo instalamos; no hay ociones, sólo instalamos y listo, ahora veremos como funciona.
 
 ## Configurar Git
-Lo primero será configurar tres parámetros con ```git config``` para establecer el funcionamiento de Git:
+Lo primero será configurar tres parámetros con ```git config``` para establecer el funcionamiento de Git. Estos 
 ```git
 git config --global user.name "MiNombre"
 git config --global user.email mimail@mail.com
 git config --global core.editor "code --wait"
 ```
 De esta manera configuramos en los dos primeros comandos nuestro nombre y mail para que quede registrado en los cambios que hagamos y con el tercero establecemos el editor de texto por defecto para Git, en este caso Visual Studio Code.
+
+Podemos comprobar la configuración usando el comando ```git config --list```
+
+>[!TIP]
+>Podemos obtener ayuda en cualquier momento o sobre cualquier comando usando ```got --help``` o ```git <comando> --help```
+
+## Crear un repositorio
+as
