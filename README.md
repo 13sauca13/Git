@@ -91,7 +91,7 @@ Automáticamente se abrirá el editor que configuramos con el ```git config```, 
 
 ![image](https://github.com/user-attachments/assets/b45b75c9-5b02-4ed5-9a47-e19144671087)
 
-Un atajo sería usar el siguiente comando para saltarnos el paso del editor y hacer el commit co el comentario en la propia línea de comando:
+Un atajo sería usar el siguiente comando para saltarnos el paso del editor y hacer el commit con el comentario en la propia línea de comando:
 ```git
 git commit -m "Aqui entre comillas va el comentario"
 ```
