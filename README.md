@@ -17,7 +17,7 @@ Una vez descargado lo instalamos; no hay ociones, sólo instalamos y listo, ahor
 
 ## Configurar Git
 Lo primero será configurar tres parámetros con ```git config``` para establecer el funcionamiento de Git:
-``` git
+```git
 git config --global user.name "MiNombre"
 git config --global user.email mimail@mail.com
 git config --global core.editor "code --wait"
