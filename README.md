@@ -107,3 +107,8 @@ Para renombrar un archivo se usa el comando:
 git mv <nombre_original> <nombre_nuevo>
 ```
 Este comando también será efectivo en el próximo commit
+
+## Trabajar en remoto
+Hasta ahora todo fue con un repositorio local, que es útil para llevar un control de cambios e incluso volver atrás si fuese necesario, pero lo realmente útil es la posibilidad de trabajar con repositorios remotos y de manera simultánea y colaborativa.
+
+Los repositorios remotos son versiones del proyecto que están hospedadas en Internet o en cualquier otra red. Podemos tener varios de ellos, y en cada uno tendremos generalmente permisos de solo lectura o de lectura y escritura. Colaborar con otras personas implica gestionar estos repositorios remotos enviando y trayendo datos de ellos cada vez que necesitemos compartir trabajo.
