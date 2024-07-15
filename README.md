@@ -65,15 +65,36 @@ Esto creará una rama que apunta donde está ahora mismo la rama en la que está
 ```git
 git checkout <nombre_rama>
 ```
+(también podemos usar ```git switch <nombre_rama>```, en nuestro caso es lo mismo, aunque ```checkout``` es más versátil para otras ocasiones)
+
 Así movemos el HEAD a la rama que indiquemos.
 
 Podemos ver las ramas y donde tenemos el HEAD con el comando ```git branch```
 
-
+![image](https://github.com/user-attachments/assets/df6b68d3-671c-454e-9417-56f94530ce1b)
 
 ![image](https://github.com/user-attachments/assets/87fc834b-bbed-414a-be7b-1a8ab9db3d54)
 
 Cuando movemos el HEAD todos los archivos del repositorio local cambian a como están (o estaban) el la instantánea de la rama a la que acabamos de ir.
+
+Una vez hayamos trabajado en un branch y queramos incorporar los cambios a otro para unir ambas ramas (lo más habitual es tener un branch con una línea de desarrollo y cuando esta esté lista, traer los cambios a la rama main), pondremos el HEAD en la rama a la que queremos incorporar los cambios y luego haremos un ***merge***:
+```git
+git merge -m "Aqui va el comentario igual que en los commit" <rama_a_incorporar>
+```
+
+![image](https://github.com/user-attachments/assets/9a790036-0578-42dd-856d-8c2401ab6cdf)
+
+Ahora ambos branches siguen existiendo, pero todo lo que cambió en testing con respecto a main está modificado en main también (no así los cambios de main, que no se pasaron a testing), ahí está una de as fortalezas de git, dos personas pueden trabajar en diferentes partes de un  proyecto usando distintas ramas, y el trabajo de cada uno, una vez aprobado, se pasa a main (o la que sea la rama principal del proyecto), pero los cambios de terceros no afectan a mi rama incluso aunque hayan hecho todos merge a main.
+
+>[!TIP]
+>Si un mismo fichero cambió en ambas ramas a unir saltará un "merge conflict" y se cargarán en el fichero las dos versiones, hay que entrar al fichero que causa el conflicto y editar a mano borrando lo no deseado.
+>
+>Una vez hacho eso se realiza un commit normal
+
+Una vez hecho un merge, si no hiciese falta ya ese branch o si simplemente queremos borrarlo:
+```git
+git branch -d <nombre_rama>
+```
 
 ## Usando Git
 Hay que tener claro el estado de los archivos para entender esta parte, cuando queramos "guardar nuestro trabajo", lo que vamos a hacer es una confirmación de cambios, un ***commit***, pero para esto los archivos tienen que estar en el área de preparación, en ***staging***, ya sean tracked modificados o untracked. Ejecutando el comando ```git status``` vemos como está el repositorio y sus archivos.
