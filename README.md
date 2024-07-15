@@ -39,7 +39,10 @@ En ambos casos se creará una carpeta llamada "nombre_repositorio_local" y en su
 ### Sobre los archivos y su estado en Git
 Ahora toca hablar sobre como funciona Git para todo lo que viene por delante. En un repositorio los archivos pueden tener dos estados:
 + Tracked: Son todos aquellos archivos que estaban en la última instantánea del proyecto; pueden ser archivos sin modificar, modificados o preparados.
-+ Untraked: Cualquier otro archivo en tu directorio de trabajo que no estaba en tu última instantánea y que no está en el área de preparación
++ Untraked: Cualquier otro archivo en tu directorio de trabajo que no estaba en tu última instantánea y que no está en el área de preparación.
+
+>[!TIP]
+>Básicamente, la diferencia entre los untracked y los tracked es que Git ignora los untracked, pero con los tracked si que tiene en cuenta su estado y versiones. 
 
 ![image](https://github.com/13sauca13/Git/assets/33026257/962531e7-3a89-420f-8c8b-190e8b68d57d)
 
@@ -64,7 +67,9 @@ git checkout <nombre_rama>
 ```
 Así movemos el HEAD a la rama que indiquemos.
 
-Podemos ver las ramas y donde tenemos el HEAD con el comando ```git log --oneline -decorate```
+Podemos ver las ramas y donde tenemos el HEAD con el comando ```git branch```
+
+![image](https://github.com/user-attachments/assets/7617c77a-325f-4b60-a215-086ec43bc811)
 
 ![image](https://github.com/user-attachments/assets/87fc834b-bbed-414a-be7b-1a8ab9db3d54)
 
@@ -81,6 +86,8 @@ Podemos ver que tengo dos archivos untracked, para que se incluya en el próximo
 
 Si modificamos un archivo aun después de hacer el ```git add``` tendremos que volver a hacerlo para incluir estos cambios al commit tal y como nos avisa el sistema al hacer el ```git status```
 
+Para añadir todos los archivos se usa ```git add --all```
+
 ![image](https://github.com/user-attachments/assets/346622d1-d43d-437c-a2c9-d1f4b658c94c)
 
 Ahora que el área de staging está como queremos podemos confirmar los cambios:
@@ -95,6 +102,11 @@ Un atajo sería usar el siguiente comando para saltarnos el paso del editor y ha
 ```git
 git commit -m "Aqui entre comillas va el comentario"
 ```
+
+Para ver un histórico de los commits realizados se utiliza el comando ```git log```. Si queremos información detallada incluyendo el comentario obligatorio de cada commit usaremos
+```git
+git log --oneline
+```
 ### Eliminar archivos
 Para eliminar un archivo basta con ejecutar el comando:
 ```git
@@ -108,6 +120,13 @@ git mv <nombre_original> <nombre_nuevo>
 ```
 Este comando también será efectivo en el próximo commit
 
+### Volver a un commit anterior
+Puede que queramos volver a una versión antigua de nuestro código. Lo primero que tendríamos que hacer es revisar el apuntador del commit (con ```git log --oneline```) y luego ejecutar:
+```git
+git reset <codigo_commit>
+```
+
+
 ## Trabajar en remoto
 Hasta ahora todo fue con un repositorio local, que es útil para llevar un control de cambios e incluso volver atrás si fuese necesario, pero lo realmente útil es la posibilidad de trabajar con repositorios remotos y de manera simultánea y colaborativa.
 
@@ -118,6 +137,8 @@ Para añadir un repositorio remoto se utiliza el siguiente comando:
 git remote add <nombre> <url>
 ```
 Podemos consultar los remotos que tenemos configurados ejecutando ```git remote```. Si queremos más detalles sobre algún remoto concreto podemos utilizar ```git remote show <nombre>```
+
+![image](https://github.com/user-attachments/assets/f7bb46d1-19c1-48b2-86a1-b07f575b3910)
 
 Ahora tenemos los remotos configurados (podemos tener todos los que queramos) y ya no es necesario usar la URL entera, podemos usar el nombre que acabamos de darle para todos los comando que vienen en adelante.
 
