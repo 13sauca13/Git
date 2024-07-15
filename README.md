@@ -163,3 +163,37 @@ Podemos consultar los remotos que tenemos configurados ejecutando ```git remote`
 
 Ahora tenemos los remotos configurados (podemos tener todos los que queramos) y ya no es necesario usar la URL entera, podemos usar el nombre que acabamos de darle para todos los comando que vienen en adelante.
 
+La idea ahora es mover lo que tenemos en nuestro repositorio local al remoto.
+
+Lo primero sería adaptarnos a la terminología de las nuevas versiones de git (hasta aqui nuestro branch principal era "master", pero por convención ahora se utiliza el término "main", vamos a mover todo a ese nuevo brach):
+```git
+git branch -M main
+```
+Esto no es obligatorio, pero si recomendable, y no es necesario más que la primera vez.
+
+Pur último subimos el estado de nuestra última confirmación al repositorio remoto, hacemos un ***push***. Esto podemos hacerlo de un brach o de todos:
+```git
+git push -u <repo_remoto> --all
+```
+```git
+git push -u <repo_remoto> <branch>
+```
+Nos saltará un prompt para autenticarnos en github la primera vez que hagamos esto o bien se nos pedirán las credenciales por terminal
+
+![image](https://github.com/user-attachments/assets/c5a2a39d-5586-4ebb-b734-59b42f9a0acd)
+
+Una vez hayamos introducido las credenciales habremos realizado la carga de nuestro repositorio local en el respositorio remoto.
+
+![image](https://github.com/user-attachments/assets/704bd615-ac8f-4315-b6ba-486a995dd1ba)
+
+Si quisiésemos en lugar de enviar nuestros cambios al remoto, traer a nuestro local los que haya en el remoto tendíamos que traer los datos primero y luego hacer merge con nuestro local:
+´´´git
+git fetch
+git merge
+```
+Otra opción es hacer ambos pasos en un único comando:
+```git
+git pull
+```
+
+![image](https://github.com/user-attachments/assets/94e3b1ee-e10b-4dcf-8aad-72ac0bac3075)
