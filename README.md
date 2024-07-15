@@ -112,3 +112,12 @@ Este comando también será efectivo en el próximo commit
 Hasta ahora todo fue con un repositorio local, que es útil para llevar un control de cambios e incluso volver atrás si fuese necesario, pero lo realmente útil es la posibilidad de trabajar con repositorios remotos y de manera simultánea y colaborativa.
 
 Los repositorios remotos son versiones del proyecto que están hospedadas en Internet o en cualquier otra red. Podemos tener varios de ellos, y en cada uno tendremos generalmente permisos de solo lectura o de lectura y escritura. Colaborar con otras personas implica gestionar estos repositorios remotos enviando y trayendo datos de ellos cada vez que necesitemos compartir trabajo.
+
+Para añadir un repositorio remoto se utiliza el siguiente comando:
+```git
+git remote add <nombre> <url>
+```
+Podemos consultar los remotos que tenemos configurados ejecutando ```git remote```. Si queremos más detalles sobre algún remoto concreto podemos utilizar ```git remote show <nombre>```
+
+Ahora tenemos los remotos configurados (podemos tener todos los que queramos) y ya no es necesario usar la URL entera, podemos usar el nombre que acabamos de darle para todos los comando que vienen en adelante.
+
