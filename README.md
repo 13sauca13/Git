@@ -69,7 +69,7 @@ Así movemos el HEAD a la rama que indiquemos.
 
 Podemos ver las ramas y donde tenemos el HEAD con el comando ```git branch```
 
-![image](https://github.com/user-attachments/assets/7617c77a-325f-4b60-a215-086ec43bc811)
+
 
 ![image](https://github.com/user-attachments/assets/87fc834b-bbed-414a-be7b-1a8ab9db3d54)
 
