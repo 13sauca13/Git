@@ -178,7 +178,13 @@ git push -u <repo_remoto> --all
 ```git
 git push -u <repo_remoto> <branch>
 ```
-Nos saltará un prompt para autenticarnos en github la primera vez que hagamos esto o bien se nos pedirán las credenciales por terminal
+Nos saltará un prompt para autenticarnos en github la primera vez que hagamos esto o bien se nos pedirán las credenciales por terminal.
+
+>[!NOTE]
+>Puede darse el caso de que nos salte error 403, la solucion sería modificar el remoto para añadir en la URL es nombre de usuario:
+>```git
+>git remote add <nombre> https://<username>@<url>
+>```
 
 ![image](https://github.com/user-attachments/assets/c5a2a39d-5586-4ebb-b734-59b42f9a0acd)
 
