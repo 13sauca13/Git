@@ -193,7 +193,7 @@ Una vez hayamos introducido las credenciales habremos realizado la carga de nues
 ![image](https://github.com/user-attachments/assets/704bd615-ac8f-4315-b6ba-486a995dd1ba)
 
 Si quisiésemos en lugar de enviar nuestros cambios al remoto, traer a nuestro local los que haya en el remoto tendíamos que traer los datos primero y luego hacer merge con nuestro local:
-´´´git
+```git
 git fetch
 git merge
 ```
